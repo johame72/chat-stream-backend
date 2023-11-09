@@ -1,3 +1,4 @@
+// server.js
 const express = require('express');
 const { createServer } = require('http');
 const { Server } = require('ws');
@@ -5,7 +6,7 @@ const axios = require('axios');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const OPENAI_API_KEY = 'your-openai-api-key'; // Replace with your actual OpenAI API key
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const OPENAI_API_URL = 'https://api.openai.com/v1/engines/gpt-4-1106-preview/completions';
 
 app.use(express.json());
